@@ -1,0 +1,159 @@
+﻿<Window xmlns:dg="http://schemas.xceed.com/wpf/xaml/toolkit"
+        x:Class="PLWPF.UpdateNannyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Height="500" Width="800" Background="LightGray" FontFamily="Berlin Sans FB Demi" Icon="Images/nannyBackground.png">
+    <ScrollViewer>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label VerticalAlignment="Center" Grid.Row="0"  HorizontalAlignment="center" Grid.Column="0" Content="Enter the nanny's ID to update:"  FontSize="22" FontFamily="Berlin Sans FB Demi"/>
+                <ComboBox x:Name="idNannyComboBox" SelectionChanged="idNannyComboBox_SelectionChanged" DisplayMemberPath="Id" Background="LightPink" Margin="0,0,0,10" Grid.Row="1" Width="200" Height="50" FontSize="28" VerticalAlignment="Center" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"  HorizontalAlignment="Center" BorderThickness="3" BorderBrush="Gray"/>
+            </Grid>
+
+            <Button Content="Update Nanny" Name="firstUpdateButton" Grid.Row="1" Background="LightSkyBlue" VerticalAlignment="Top" HorizontalAlignment="Center" Height="40" FontSize="16"  Width="150"  BorderThickness="3" Visibility="Visible" Click="firstUpdateButton_Click"  >
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=idNannyComboBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Image Grid.Row="1" Name="firstPicture" Source="Images\NannyBackground.png" Height="300" Width="300" VerticalAlignment="Bottom" Margin="0,0,0,170" Visibility="Visible" />
+
+
+            <Grid Grid.Row="1" x:Name="grid1" VerticalAlignment="Top" Margin="50,20,50,0" HorizontalAlignment="Center" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+                <TextBox x:Name="addressTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Address, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Dob:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dobDatePicker" DisplayDateStart="1/1/2018" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="3" SelectedDate="{Binding Dob, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" IsEnabled="False"/>
+                <Label Content="Elevator:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+                <CheckBox x:Name="elevatorCheckBox" Background="LightPink" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Elevator, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+                <Label Content="Exp Years:" Grid.Column="0"  HorizontalAlignment="Left" Margin="3" Grid.Row="12" VerticalAlignment="Center"/>
+                <TextBox x:Name="expYearsTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="12" Text="{Binding ExpYears, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Family Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+                <TextBox x:Name="familyNameTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="First Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+                <TextBox x:Name="firstNameTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Floor:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+                <TextBox x:Name="floorTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="6" Text="{Binding Floor, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="idTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120" IsEnabled="False"/>
+                <Label Content="Is Sal Per Hour:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="14" VerticalAlignment="Center"/>
+                <CheckBox x:Name="isSalPerHourCheckBox" Background="LightPink" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding IsSalPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" Margin="3" Grid.Row="14" VerticalAlignment="Center"/>
+                <Label Content="Is Tamat:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="11" VerticalAlignment="Center"/>
+                <CheckBox x:Name="isTamatCheckBox" Background="LightPink" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding IsTamat, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" Margin="3" Grid.Row="11" VerticalAlignment="Center"/>
+                <Label Content="Max Age Month:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+                <TextBox x:Name="maxAgeMonthTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="9" Text="{Binding MaxAgeMonth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Max Children:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="10" VerticalAlignment="Center"/>
+                <TextBox x:Name="maxChildrenTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="10" Text="{Binding MaxChildren, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Min Age Month:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
+                <TextBox x:Name="minAgeMonthTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="8" Text="{Binding MinAgeMonth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Phone:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="phoneTextBox" Grid.Column="1" Background="LightPink" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Recommendations:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="13" VerticalAlignment="Center"/>
+                <TextBox x:Name="recommendationsTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="13" Text="{Binding Recommendations, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Sal Per Hour:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="15" VerticalAlignment="Center"/>
+                <TextBox x:Name="salPerHourTextBox" IsEnabled="{Binding ElementName=isSalPerHourCheckBox, Path= IsChecked}" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="15" Text="{Binding SalPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+                <Label Content="Sal Per Month:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="16" VerticalAlignment="Center"/>
+                <TextBox x:Name="salPerMonthTextBox" Background="LightPink" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="16" Text="{Binding SalPerMonth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Width="120"/>
+
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="7" Margin="60,0,0,0" HorizontalAlignment="Center" Content="Choose the days and the hours you work:" />
+
+                <Label VerticalAlignment="Bottom" FontFamily="Berlin Sans FB Demi" Grid.Row="1" Grid.Column="2" Margin="60,0,0,4.667" HorizontalAlignment="Left" Content="Sunday:" FontSize="14"/>
+
+                <CheckBox x:Name="sundayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Margin="3" FontSize="14" IsChecked="{Binding  DaysOfWork[0], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left"  Content=""/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="1" Grid.Column="4"  Margin="3" FontSize="14" HorizontalAlignment="Right" Content="Start:"/>
+                <dg:TimePicker x:Name="startSundayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="1" Margin="3"  FontSize="14" HorizontalAlignment="Center" Grid.Column="5" IsEnabled="{Binding ElementName=sundayCheckBox, Path=IsChecked}" Value="{Binding Week_of_work[0].start ,Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true }" />
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="1" Grid.Column="6" Margin="3" HorizontalAlignment="Right"  FontSize="14" Content="End:"/>
+                <dg:TimePicker x:Name="endSundayTime"  Background="LightPink" VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Center" Grid.Column="7" IsEnabled="{Binding ElementName=sundayCheckBox, Path=IsChecked}"/>
+
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Column="2" Grid.Row="2" Margin="60,0,0,0" HorizontalAlignment="Left"  FontSize="14" Content="Monday:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="2" Grid.Column="4" Margin="3"  FontSize="14" HorizontalAlignment="Right" Content="Start:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="2" Grid.Column="6" Margin="3"  FontSize="14" HorizontalAlignment="Right" Content="End:"/>
+
+                <CheckBox x:Name="mondayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="2" Margin="3"  FontSize="14" IsChecked="{Binding  DaysOfWork[1], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Grid.Column="3" Content=""/>
+                <dg:TimePicker x:Name="startMondayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="2" Margin="3"  FontSize="14" HorizontalAlignment="Left" Grid.Column="5" IsEnabled="{Binding ElementName=mondayCheckBox, Path=IsChecked}" />
+                <dg:TimePicker x:Name="endMondayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="2" Margin="3"  FontSize="14" HorizontalAlignment="Left" Grid.Column="7" IsEnabled="{Binding ElementName=mondayCheckBox, Path=IsChecked}"/>
+
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Column="2" Grid.Row="3" Margin="60,0,0,0" HorizontalAlignment="Left"  FontSize="14" Content="Tuesday:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="3" Grid.Column="4" Margin="3"  FontSize="14" HorizontalAlignment="Right" Content="Start:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="3" Grid.Column="6" Margin="3"  FontSize="14" HorizontalAlignment="Right" Content="End:"/>
+
+                <CheckBox x:Name="tuesdayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="3" Margin="3" FontSize="14" IsChecked="{Binding  DaysOfWork[2], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Grid.Column="3" Content=""/>
+                <dg:TimePicker x:Name="startTuesdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="3" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="5" IsEnabled="{Binding ElementName=tuesdayCheckBox, Path=IsChecked}" Value="{Binding Week_of_work[2].start ,Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true }"/>
+                <dg:TimePicker x:Name="endTuesdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="3" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="7" IsEnabled="{Binding ElementName=tuesdayCheckBox, Path=IsChecked}"/>
+
+                <Label VerticalAlignment="Center" Grid.Column="2" FontFamily="Berlin Sans FB Demi" Grid.Row="4" Margin="60,0,0,0" HorizontalAlignment="Left" FontSize="14" Content="Wednesday:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="4" Grid.Column="4" Margin="3" HorizontalAlignment="Right" FontSize="14" Content="Start:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="4" Grid.Column="6" Margin="3" HorizontalAlignment="Right" FontSize="14" Content="End:"/>
+
+                <CheckBox x:Name="wednesdayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="4" Margin="3" FontSize="14" IsChecked="{Binding  DaysOfWork[3], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Grid.Column="3" Content=""/>
+                <dg:TimePicker x:Name="startWednesdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="4" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="5" IsEnabled="{Binding ElementName=wednesdayCheckBox, Path=IsChecked}" />
+                <dg:TimePicker x:Name="endWednesdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="4" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="7" IsEnabled="{Binding ElementName=wednesdayCheckBox, Path=IsChecked}"/>
+
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Column="2" Grid.Row="5" Margin="60,0,0,0" HorizontalAlignment="Left" FontSize="14" Content="Thursday:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="5" Grid.Column="4" Margin="3" FontSize="14" HorizontalAlignment="Right" Content="Start:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="5" Grid.Column="6" Margin="3" FontSize="14" HorizontalAlignment="Right" Content="End:"/>
+
+                <CheckBox x:Name="thursdayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="5" Margin="3" FontSize="14" IsChecked="{Binding  DaysOfWork[4], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Grid.Column="3" Content=""/>
+                <dg:TimePicker x:Name="startThursdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="5" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="5" IsEnabled="{Binding ElementName=thursdayCheckBox, Path=IsChecked}" />
+                <dg:TimePicker x:Name="endThursdayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="5" Margin="3" FontSize="14" HorizontalAlignment="Left" Grid.Column="7" IsEnabled="{Binding ElementName=thursdayCheckBox, Path=IsChecked}"/>
+
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Column="2" Grid.Row="6" Margin="60,0,0,0" HorizontalAlignment="Left" FontSize="14" Content="Friday:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="6" Grid.Column="4" Margin="3" FontSize="14" HorizontalAlignment="Right" Content="Start:"/>
+                <Label VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" Grid.Row="6" Grid.Column="6" Margin="3" FontSize="14" HorizontalAlignment="Right" Content="End:"/>
+
+                <CheckBox x:Name="fridayCheckBox" Background="LightPink" VerticalAlignment="Center" Grid.Row="6" Margin="3" FontSize="14" IsChecked="{Binding  DaysOfWork[5], Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Grid.Column="3" Content=""/>
+                <dg:TimePicker x:Name="startFridayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="5" IsEnabled="{Binding ElementName=fridayCheckBox, Path=IsChecked}" FontSize="14" Text=""/>
+                <dg:TimePicker x:Name="endFridayTime" Background="LightPink" VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="7" IsEnabled="{Binding ElementName=fridayCheckBox, Path=IsChecked}" FontSize="14" />
+            </Grid>
+            <Button x:Name="UpdateNannyButton" Grid.Row="1" Background="LightSkyBlue" Content="Update Nanny" HorizontalAlignment="Right" Margin="0,0,140,220" VerticalAlignment="Bottom" Width="120"   Height="40" FontSize="16" BorderThickness="3" Visibility="Hidden" Click="UpdateNannyButton_Click"/>
+            <Image Grid.Row="1" Name="thirdPicture" Source="Images\NannyBackground.png" Height="150" Width="150" VerticalAlignment="Bottom" Margin="0,0,120,50" HorizontalAlignment="Right" Visibility="Hidden" />
+        </Grid>
+    </ScrollViewer>
+</Window>

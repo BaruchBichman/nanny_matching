@@ -1,0 +1,41 @@
+﻿<Window x:Class="PLWPF.PaymentMotherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Height="360" Width="500" FontFamily="Berlin Sans FB Demi">
+    <Grid>
+        <Grid Background="LightGray"  >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label VerticalAlignment="Center" Margin="0,20" Grid.Row="0"  HorizontalAlignment="center" Grid.Column="0" Content="Choose the mother's ID:" Width="auto" Height="auto" FontSize="25" FontFamily="Berlin Sans FB Demi"/>
+            <ComboBox x:Name="idComboBox" DisplayMemberPath="Id" Background="LightPink" Margin="0,0,0,10" Grid.Row="1" Width="200" Height="50" FontSize="28" VerticalAlignment="Center" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"  HorizontalAlignment="Center" BorderThickness="3" BorderBrush="Gray"/>
+
+            <Button Content="Calcul Payment" Grid.Row="2" Background="LightSkyBlue" VerticalAlignment="Top" HorizontalAlignment="Center" Height="40" FontSize="16"  Width="150" Click="Button_Click"  BorderThickness="3" >
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Label x:Name="SalaryTextBox"  VerticalAlignment="Top" Margin="0,0,0,20" Grid.Row="3"  HorizontalAlignment="center" Grid.Column="0"  Width="auto" Height="auto" FontSize="25" FontFamily="Berlin Sans FB Demi" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <Image x:Name="image" Source="Images/nannyBackground.png" Grid.Row="2" Margin="170,51,166.333,0" Grid.RowSpan="2"  />
+            <Button x:Name="close" Content="Close" Grid.Row="3" Background="LightSkyBlue" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" FontSize="16"  Width="150" Click="Button_Click_1" Visibility="Hidden"  BorderThickness="3" />
+
+        </Grid>
+
+
+    </Grid>
+</Window>

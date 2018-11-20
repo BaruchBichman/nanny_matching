@@ -1,0 +1,34 @@
+﻿<Window x:Class="PLWPF.UpdateContractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Height="670" Width="520" FontFamily="Berlin Sans FB Demi" Icon="Images/nannyBackground.png">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" Margin="0,20" Grid.Row="0"  HorizontalAlignment="center"  Content="Enter the number of the contract to update:" FontSize="25" FontFamily="Berlin Sans FB Demi"/>
+        <ComboBox x:Name="contractNumberComboBox" DisplayMemberPath="ContractNumber" SelectionChanged="contractNumberComboBox_SelectionChanged"  HorizontalContentAlignment="Stretch"  Background="LightPink" Margin="0,0,0,10" Grid.Row="1" Width="200" Height="50" FontSize="28" VerticalAlignment="Center" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"  HorizontalAlignment="Center" BorderThickness="3" BorderBrush="Gray"/>
+        <Button Content="Update Contract" Grid.Row="2" Background="LightSkyBlue" VerticalAlignment="Top" HorizontalAlignment="Center" Height="40" FontSize="16"  Width="150"   BorderThickness="3" Click="Button_Click" >
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=contractNumberComboBox, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Image Source="Images/nannyBackground.png" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300" />
+        <ContentControl x:Name="c" Grid.Row="2" HorizontalContentAlignment="Center" >
+            <local:UpdateContractControl x:Name="update" Visibility="Hidden"/>
+        </ContentControl>
+    </Grid>
+</Window>

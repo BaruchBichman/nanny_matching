@@ -1,0 +1,11 @@
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\dotNet5778_Project_6256_4843\BE\bin\Debug\BE.dll
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\dotNet5778_Project_6256_4843\BE\bin\Debug\BE.pdb
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.dll
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.pdb
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\bin\Debug\BE.dll
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\bin\Debug\BE.pdb
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.csprojAssemblyReference.cache
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.dll
+C:\Users\Baruch\Desktop\dotNet5778_Project_6256_4843\BE\obj\Debug\BE.pdb

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contracts>
+  <contract>
+    <ContractNumber>10000000</ContractNumber>
+    <Id_Nanny>300</Id_Nanny>
+    <IdChild>100</IdChild>
+    <IsPerMonth>True</IsPerMonth>
+    <Sal_Per_Hour>30</Sal_Per_Hour>
+    <Sal_Per_Month>4500</Sal_Per_Month>
+    <StartDate>30/11/2017 00:00:00</StartDate>
+    <EndDate>30/12/2017 00:00:00</EndDate>
+    <Theyknow>False</Theyknow>
+    <IsSigned>True</IsSigned>
+  </contract>
+  <contract>
+    <ContractNumber>10000001</ContractNumber>
+    <Id_Nanny>301</Id_Nanny>
+    <IdChild>101</IdChild>
+    <IsPerMonth>True</IsPerMonth>
+    <Sal_Per_Hour>30</Sal_Per_Hour>
+    <Sal_Per_Month>4500</Sal_Per_Month>
+    <StartDate>30/11/2017 00:00:00</StartDate>
+    <EndDate>30/12/2017 00:00:00</EndDate>
+    <Theyknow>False</Theyknow>
+    <IsSigned>True</IsSigned>
+  </contract>
+  <contract>
+    <ContractNumber>10000002</ContractNumber>
+    <Id_Nanny>300</Id_Nanny>
+    <IdChild>102</IdChild>
+    <IsPerMonth>True</IsPerMonth>
+    <Sal_Per_Hour>30</Sal_Per_Hour>
+    <Sal_Per_Month>4500</Sal_Per_Month>
+    <StartDate>30/11/2017 00:00:00</StartDate>
+    <EndDate>30/12/2017 00:00:00</EndDate>
+    <Theyknow>False</Theyknow>
+    <IsSigned>True</IsSigned>
+  </contract>
+</contracts>

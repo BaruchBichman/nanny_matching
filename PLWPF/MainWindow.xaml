@@ -1,0 +1,63 @@
+﻿<Window x:Class="PLWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Height="600" Width="800" WindowState="Maximized" Background="LightGray"  WindowStartupLocation="CenterScreen" Icon="Images/nannyBackground.png" FontFamily="Berlin Sans FB Demi">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="MotherButton" Content="Mother" Click="Mother_Click" Style="{DynamicResource ButtonStyle1}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="NannyButton" Content="Nanny"  Click="Nanny_Click" Grid.Row="0" Grid.Column="1" Style="{DynamicResource ButtonStyle1}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="ContractButton" Content="Contract" Click="Contract_Click" Grid.Row="0" Grid.Column="2" Style="{DynamicResource ButtonStyle1}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="ChildButton" Content="Child" Click="Child_Click" Grid.Row="0" Grid.Column="3" Style="{DynamicResource ButtonStyle1}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+
+        </Button>
+
+                <Button x:Name="GroupingButton" Content="Grouping"  Grid.Row="0" Grid.Column="4" Style="{DynamicResource ButtonStyle1}" Click="GroupingButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+
+        </Button>
+
+        
+        <ContentControl x:Name="c" Grid.Row="1" Grid.ColumnSpan="4">
+            <Grid>
+                <local:imageControl x:Name="image" Visibility="Visible"/>
+                <local:NannyControl x:Name="nanny" Visibility="Hidden"/>
+                <local:MotherControl x:Name="mother" Visibility="Hidden"/>
+                <local:ChildControl x:Name="child" Visibility="Hidden"/>
+                <local:ContractControl x:Name="contract" Visibility="Hidden"/>
+
+
+            </Grid>
+        </ContentControl>
+    </Grid>
+</Window>

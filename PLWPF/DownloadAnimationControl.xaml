@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="PLWPF.DownloadAnimationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="170" d:DesignWidth="300">
+    <UserControl.Resources >
+        <Style TargetType="Ellipse">
+            <Setter Property="Fill" Value="LightGray" />
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Height" Value="8" />
+        </Style>
+    </UserControl.Resources>
+    <Canvas Height="58" Width="275">
+        <Ellipse Canvas.Left="56" Canvas.Top="23" />
+        <Ellipse Canvas.Left="70" Canvas.Top="23" />
+        <Ellipse Canvas.Left="84" Canvas.Top="23" />
+        <Ellipse Canvas.Left="98" Canvas.Top="23" />
+        <Ellipse Canvas.Left="112" Canvas.Top="23" />
+        <Ellipse Canvas.Left="126" Canvas.Top="23" />
+        <Ellipse Canvas.Left="140" Canvas.Top="23" />
+        <Ellipse Canvas.Left="154" Canvas.Top="23" />
+        <Ellipse Canvas.Left="168" Canvas.Top="23" />
+        <Ellipse Canvas.Left="182" Canvas.Top="23" />
+        <Ellipse Canvas.Left="196" Canvas.Top="23" />
+        <Ellipse Canvas.Left="210" Canvas.Top="23" />
+        <Canvas Canvas.Left="10" Canvas.Top="19" 
+
+		Name="SlidingCanvas" Height="17" Width="46">
+            <Ellipse Canvas.Left="4" Canvas.Top="4" Fill="Orange" />
+            <Ellipse Canvas.Left="18" Canvas.Top="4" Fill="Orange" />
+            <Ellipse Canvas.Left="32" Canvas.Top="4" Fill="Orange" />
+        </Canvas>
+        <Image Canvas.Left="4" Canvas.Top="4" 
+
+		Source="Images/Globe.jpg" Stretch="Fill" Height="48" Width="48" />
+        <Image Canvas.Left="222" Canvas.Top="4"	Source="Images/Computer.jpg" Stretch="Fill" Height="48" Width="48" />
+        <TextBox x:Name="textBox" FontWeight="Medium" Height="42" FontSize="14" HorizontalContentAlignment="Center" Background="LightGray"  Canvas.Left="56" TextWrapping="Wrap"  Text="The system is looking for appropriate Nannies..." Canvas.Top="-43" Width="162" FontFamily="Berlin Sans FB Demi" BorderBrush="LightGray"/>
+    </Canvas>
+</UserControl>
